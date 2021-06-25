@@ -1,0 +1,2089 @@
+anusha@ubuntu:~$ mongoimport --type csv -d anusha -c test --headerline --drop /home/anusha/Downloads/diabetes_csv.csv
+2021-04-28T10:08:22.406+0530	connected to: localhost
+2021-04-28T10:08:22.408+0530	dropping: anusha.test
+2021-04-28T10:08:22.441+0530	imported 768 documents
+anusha@ubuntu:~$ mongoimport --db anusha --collection test --file /home/anusha/Downloads/diabetes_csv.csv
+2021-04-28T10:17:16.475+0530	connected to: localhost
+2021-04-28T10:17:16.476+0530	Failed: error processing document #1: invalid character 'p' looking for beginning of value
+2021-04-28T10:17:16.476+0530	imported 0 documents
+anusha@ubuntu:~$ mongoimport --db anusha --collection test --file /home/anusha/Downloads/diabetes_csv.csv
+2021-04-28T10:17:59.568+0530	connected to: localhost
+2021-04-28T10:17:59.568+0530	Failed: error processing document #1: invalid character 'p' looking for beginning of value
+2021-04-28T10:17:59.568+0530	imported 0 documents
+anusha@ubuntu:~$ mongoexport --db anushaa --collection test  --out /home/anusha/Downloads/diabetes_csv.csv
+2021-04-28T10:20:25.782+0530	connected to: localhost
+2021-04-28T10:20:25.784+0530	exported 0 records
+anusha@ubuntu:~$ mongoexport --db anusha --collection test  --out /home/anusha/Downloads/diabetes_csv.csv
+2021-04-28T10:20:55.708+0530	connected to: localhost
+2021-04-28T10:20:55.736+0530	exported 768 records
+anusha@ubuntu:~$ mongo
+MongoDB shell version v3.6.8
+connecting to: mongodb://127.0.0.1:27017
+Implicit session: session { "id" : UUID("9ed604b3-dd33-4593-be3f-9f0998288eb0") }
+MongoDB server version: 3.6.8
+Server has startup warnings: 
+2021-04-27T20:36:06.351-0700 I STORAGE  [initandlisten] 
+2021-04-27T20:36:06.351-0700 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2021-04-27T20:36:06.351-0700 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2021-04-27T20:36:08.567-0700 I CONTROL  [initandlisten] 
+2021-04-27T20:36:08.567-0700 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2021-04-27T20:36:08.567-0700 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2021-04-27T20:36:08.567-0700 I CONTROL  [initandlisten] 
+> show dbs
+admin   0.000GB
+anusha  0.000GB
+config  0.000GB
+local   0.000GB
+> use anusha
+switched to db anusha
+> show collections
+test
+> db.test.find().pretty()
+{
+	"_id" : ObjectId("6088e6beb332092a53699652"),
+	"preg" : 5,
+	"plas" : 116,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 25.6,
+	"pedi" : 0.201,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699653"),
+	"preg" : 2,
+	"plas" : 197,
+	"pres" : 70,
+	"skin" : 45,
+	"insu" : 543,
+	"mass" : 30.5,
+	"pedi" : 0.158,
+	"age" : 53,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699654"),
+	"preg" : 8,
+	"plas" : 125,
+	"pres" : 96,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 0,
+	"pedi" : 0.232,
+	"age" : 54,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699655"),
+	"preg" : 4,
+	"plas" : 110,
+	"pres" : 92,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 37.6,
+	"pedi" : 0.191,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699656"),
+	"preg" : 10,
+	"plas" : 168,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 38,
+	"pedi" : 0.537,
+	"age" : 34,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699657"),
+	"preg" : 10,
+	"plas" : 139,
+	"pres" : 80,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 27.1,
+	"pedi" : 1.441,
+	"age" : 57,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699658"),
+	"preg" : 1,
+	"plas" : 189,
+	"pres" : 60,
+	"skin" : 23,
+	"insu" : 846,
+	"mass" : 30.1,
+	"pedi" : 0.398,
+	"age" : 59,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699659"),
+	"preg" : 5,
+	"plas" : 166,
+	"pres" : 72,
+	"skin" : 19,
+	"insu" : 175,
+	"mass" : 25.8,
+	"pedi" : 0.587,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965a"),
+	"preg" : 0,
+	"plas" : 137,
+	"pres" : 40,
+	"skin" : 35,
+	"insu" : 168,
+	"mass" : 43.1,
+	"pedi" : 2.288,
+	"age" : 33,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965b"),
+	"preg" : 0,
+	"plas" : 118,
+	"pres" : 84,
+	"skin" : 47,
+	"insu" : 230,
+	"mass" : 45.8,
+	"pedi" : 0.551,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965c"),
+	"preg" : 7,
+	"plas" : 107,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 29.6,
+	"pedi" : 0.254,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965d"),
+	"preg" : 1,
+	"plas" : 103,
+	"pres" : 30,
+	"skin" : 38,
+	"insu" : 83,
+	"mass" : 43.3,
+	"pedi" : 0.183,
+	"age" : 33,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965e"),
+	"preg" : 1,
+	"plas" : 115,
+	"pres" : 70,
+	"skin" : 30,
+	"insu" : 96,
+	"mass" : 34.6,
+	"pedi" : 0.529,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965f"),
+	"preg" : 3,
+	"plas" : 126,
+	"pres" : 88,
+	"skin" : 41,
+	"insu" : 235,
+	"mass" : 39.3,
+	"pedi" : 0.704,
+	"age" : 27,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699660"),
+	"preg" : 8,
+	"plas" : 99,
+	"pres" : 84,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 35.4,
+	"pedi" : 0.388,
+	"age" : 50,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699661"),
+	"preg" : 7,
+	"plas" : 196,
+	"pres" : 90,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39.8,
+	"pedi" : 0.451,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699662"),
+	"preg" : 9,
+	"plas" : 119,
+	"pres" : 80,
+	"skin" : 35,
+	"insu" : 0,
+	"mass" : 29,
+	"pedi" : 0.263,
+	"age" : 29,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699663"),
+	"preg" : 1,
+	"plas" : 89,
+	"pres" : 66,
+	"skin" : 23,
+	"insu" : 94,
+	"mass" : 28.1,
+	"pedi" : 0.167,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699664"),
+	"preg" : 11,
+	"plas" : 143,
+	"pres" : 94,
+	"skin" : 33,
+	"insu" : 146,
+	"mass" : 36.6,
+	"pedi" : 0.254,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699665"),
+	"preg" : 10,
+	"plas" : 125,
+	"pres" : 70,
+	"skin" : 26,
+	"insu" : 115,
+	"mass" : 31.1,
+	"pedi" : 0.205,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+Type "it" for more
+> db.test.find({"preg":{$exists:true}})
+{ "_id" : ObjectId("6088e6beb332092a53699652"), "preg" : 5, "plas" : 116, "pres" : 74, "skin" : 0, "insu" : 0, "mass" : 25.6, "pedi" : 0.201, "age" : 30, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699653"), "preg" : 2, "plas" : 197, "pres" : 70, "skin" : 45, "insu" : 543, "mass" : 30.5, "pedi" : 0.158, "age" : 53, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a53699654"), "preg" : 8, "plas" : 125, "pres" : 96, "skin" : 0, "insu" : 0, "mass" : 0, "pedi" : 0.232, "age" : 54, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a53699655"), "preg" : 4, "plas" : 110, "pres" : 92, "skin" : 0, "insu" : 0, "mass" : 37.6, "pedi" : 0.191, "age" : 30, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699656"), "preg" : 10, "plas" : 168, "pres" : 74, "skin" : 0, "insu" : 0, "mass" : 38, "pedi" : 0.537, "age" : 34, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a53699657"), "preg" : 10, "plas" : 139, "pres" : 80, "skin" : 0, "insu" : 0, "mass" : 27.1, "pedi" : 1.441, "age" : 57, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699658"), "preg" : 1, "plas" : 189, "pres" : 60, "skin" : 23, "insu" : 846, "mass" : 30.1, "pedi" : 0.398, "age" : 59, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a53699659"), "preg" : 5, "plas" : 166, "pres" : 72, "skin" : 19, "insu" : 175, "mass" : 25.8, "pedi" : 0.587, "age" : 51, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a5369965a"), "preg" : 0, "plas" : 137, "pres" : 40, "skin" : 35, "insu" : 168, "mass" : 43.1, "pedi" : 2.288, "age" : 33, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a5369965b"), "preg" : 0, "plas" : 118, "pres" : 84, "skin" : 47, "insu" : 230, "mass" : 45.8, "pedi" : 0.551, "age" : 31, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a5369965c"), "preg" : 7, "plas" : 107, "pres" : 74, "skin" : 0, "insu" : 0, "mass" : 29.6, "pedi" : 0.254, "age" : 31, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a5369965d"), "preg" : 1, "plas" : 103, "pres" : 30, "skin" : 38, "insu" : 83, "mass" : 43.3, "pedi" : 0.183, "age" : 33, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a5369965e"), "preg" : 1, "plas" : 115, "pres" : 70, "skin" : 30, "insu" : 96, "mass" : 34.6, "pedi" : 0.529, "age" : 32, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a5369965f"), "preg" : 3, "plas" : 126, "pres" : 88, "skin" : 41, "insu" : 235, "mass" : 39.3, "pedi" : 0.704, "age" : 27, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699660"), "preg" : 8, "plas" : 99, "pres" : 84, "skin" : 0, "insu" : 0, "mass" : 35.4, "pedi" : 0.388, "age" : 50, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699661"), "preg" : 7, "plas" : 196, "pres" : 90, "skin" : 0, "insu" : 0, "mass" : 39.8, "pedi" : 0.451, "age" : 41, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a53699662"), "preg" : 9, "plas" : 119, "pres" : 80, "skin" : 35, "insu" : 0, "mass" : 29, "pedi" : 0.263, "age" : 29, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a53699663"), "preg" : 1, "plas" : 89, "pres" : 66, "skin" : 23, "insu" : 94, "mass" : 28.1, "pedi" : 0.167, "age" : 21, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699664"), "preg" : 11, "plas" : 143, "pres" : 94, "skin" : 33, "insu" : 146, "mass" : 36.6, "pedi" : 0.254, "age" : 51, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a53699665"), "preg" : 10, "plas" : 125, "pres" : 70, "skin" : 26, "insu" : 115, "mass" : 31.1, "pedi" : 0.205, "age" : 41, "class" : "tested_positive" }
+Type "it" for more
+> db.test.find({"preg":{$exists:true}}).pretty()
+{
+	"_id" : ObjectId("6088e6beb332092a53699652"),
+	"preg" : 5,
+	"plas" : 116,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 25.6,
+	"pedi" : 0.201,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699653"),
+	"preg" : 2,
+	"plas" : 197,
+	"pres" : 70,
+	"skin" : 45,
+	"insu" : 543,
+	"mass" : 30.5,
+	"pedi" : 0.158,
+	"age" : 53,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699654"),
+	"preg" : 8,
+	"plas" : 125,
+	"pres" : 96,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 0,
+	"pedi" : 0.232,
+	"age" : 54,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699655"),
+	"preg" : 4,
+	"plas" : 110,
+	"pres" : 92,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 37.6,
+	"pedi" : 0.191,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699656"),
+	"preg" : 10,
+	"plas" : 168,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 38,
+	"pedi" : 0.537,
+	"age" : 34,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699657"),
+	"preg" : 10,
+	"plas" : 139,
+	"pres" : 80,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 27.1,
+	"pedi" : 1.441,
+	"age" : 57,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699658"),
+	"preg" : 1,
+	"plas" : 189,
+	"pres" : 60,
+	"skin" : 23,
+	"insu" : 846,
+	"mass" : 30.1,
+	"pedi" : 0.398,
+	"age" : 59,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699659"),
+	"preg" : 5,
+	"plas" : 166,
+	"pres" : 72,
+	"skin" : 19,
+	"insu" : 175,
+	"mass" : 25.8,
+	"pedi" : 0.587,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965a"),
+	"preg" : 0,
+	"plas" : 137,
+	"pres" : 40,
+	"skin" : 35,
+	"insu" : 168,
+	"mass" : 43.1,
+	"pedi" : 2.288,
+	"age" : 33,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965b"),
+	"preg" : 0,
+	"plas" : 118,
+	"pres" : 84,
+	"skin" : 47,
+	"insu" : 230,
+	"mass" : 45.8,
+	"pedi" : 0.551,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965c"),
+	"preg" : 7,
+	"plas" : 107,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 29.6,
+	"pedi" : 0.254,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965d"),
+	"preg" : 1,
+	"plas" : 103,
+	"pres" : 30,
+	"skin" : 38,
+	"insu" : 83,
+	"mass" : 43.3,
+	"pedi" : 0.183,
+	"age" : 33,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965e"),
+	"preg" : 1,
+	"plas" : 115,
+	"pres" : 70,
+	"skin" : 30,
+	"insu" : 96,
+	"mass" : 34.6,
+	"pedi" : 0.529,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965f"),
+	"preg" : 3,
+	"plas" : 126,
+	"pres" : 88,
+	"skin" : 41,
+	"insu" : 235,
+	"mass" : 39.3,
+	"pedi" : 0.704,
+	"age" : 27,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699660"),
+	"preg" : 8,
+	"plas" : 99,
+	"pres" : 84,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 35.4,
+	"pedi" : 0.388,
+	"age" : 50,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699661"),
+	"preg" : 7,
+	"plas" : 196,
+	"pres" : 90,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39.8,
+	"pedi" : 0.451,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699662"),
+	"preg" : 9,
+	"plas" : 119,
+	"pres" : 80,
+	"skin" : 35,
+	"insu" : 0,
+	"mass" : 29,
+	"pedi" : 0.263,
+	"age" : 29,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699663"),
+	"preg" : 1,
+	"plas" : 89,
+	"pres" : 66,
+	"skin" : 23,
+	"insu" : 94,
+	"mass" : 28.1,
+	"pedi" : 0.167,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699664"),
+	"preg" : 11,
+	"plas" : 143,
+	"pres" : 94,
+	"skin" : 33,
+	"insu" : 146,
+	"mass" : 36.6,
+	"pedi" : 0.254,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699665"),
+	"preg" : 10,
+	"plas" : 125,
+	"pres" : 70,
+	"skin" : 26,
+	"insu" : 115,
+	"mass" : 31.1,
+	"pedi" : 0.205,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+Type "it" for more
+> db.test.find({"class":{$type:2}}).pretty()
+{
+	"_id" : ObjectId("6088e6beb332092a53699652"),
+	"preg" : 5,
+	"plas" : 116,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 25.6,
+	"pedi" : 0.201,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699653"),
+	"preg" : 2,
+	"plas" : 197,
+	"pres" : 70,
+	"skin" : 45,
+	"insu" : 543,
+	"mass" : 30.5,
+	"pedi" : 0.158,
+	"age" : 53,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699654"),
+	"preg" : 8,
+	"plas" : 125,
+	"pres" : 96,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 0,
+	"pedi" : 0.232,
+	"age" : 54,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699655"),
+	"preg" : 4,
+	"plas" : 110,
+	"pres" : 92,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 37.6,
+	"pedi" : 0.191,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699656"),
+	"preg" : 10,
+	"plas" : 168,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 38,
+	"pedi" : 0.537,
+	"age" : 34,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699657"),
+	"preg" : 10,
+	"plas" : 139,
+	"pres" : 80,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 27.1,
+	"pedi" : 1.441,
+	"age" : 57,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699658"),
+	"preg" : 1,
+	"plas" : 189,
+	"pres" : 60,
+	"skin" : 23,
+	"insu" : 846,
+	"mass" : 30.1,
+	"pedi" : 0.398,
+	"age" : 59,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699659"),
+	"preg" : 5,
+	"plas" : 166,
+	"pres" : 72,
+	"skin" : 19,
+	"insu" : 175,
+	"mass" : 25.8,
+	"pedi" : 0.587,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965a"),
+	"preg" : 0,
+	"plas" : 137,
+	"pres" : 40,
+	"skin" : 35,
+	"insu" : 168,
+	"mass" : 43.1,
+	"pedi" : 2.288,
+	"age" : 33,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965b"),
+	"preg" : 0,
+	"plas" : 118,
+	"pres" : 84,
+	"skin" : 47,
+	"insu" : 230,
+	"mass" : 45.8,
+	"pedi" : 0.551,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965c"),
+	"preg" : 7,
+	"plas" : 107,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 29.6,
+	"pedi" : 0.254,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965d"),
+	"preg" : 1,
+	"plas" : 103,
+	"pres" : 30,
+	"skin" : 38,
+	"insu" : 83,
+	"mass" : 43.3,
+	"pedi" : 0.183,
+	"age" : 33,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965e"),
+	"preg" : 1,
+	"plas" : 115,
+	"pres" : 70,
+	"skin" : 30,
+	"insu" : 96,
+	"mass" : 34.6,
+	"pedi" : 0.529,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965f"),
+	"preg" : 3,
+	"plas" : 126,
+	"pres" : 88,
+	"skin" : 41,
+	"insu" : 235,
+	"mass" : 39.3,
+	"pedi" : 0.704,
+	"age" : 27,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699660"),
+	"preg" : 8,
+	"plas" : 99,
+	"pres" : 84,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 35.4,
+	"pedi" : 0.388,
+	"age" : 50,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699661"),
+	"preg" : 7,
+	"plas" : 196,
+	"pres" : 90,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39.8,
+	"pedi" : 0.451,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699662"),
+	"preg" : 9,
+	"plas" : 119,
+	"pres" : 80,
+	"skin" : 35,
+	"insu" : 0,
+	"mass" : 29,
+	"pedi" : 0.263,
+	"age" : 29,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699663"),
+	"preg" : 1,
+	"plas" : 89,
+	"pres" : 66,
+	"skin" : 23,
+	"insu" : 94,
+	"mass" : 28.1,
+	"pedi" : 0.167,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699664"),
+	"preg" : 11,
+	"plas" : 143,
+	"pres" : 94,
+	"skin" : 33,
+	"insu" : 146,
+	"mass" : 36.6,
+	"pedi" : 0.254,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699665"),
+	"preg" : 10,
+	"plas" : 125,
+	"pres" : 70,
+	"skin" : 26,
+	"insu" : 115,
+	"mass" : 31.1,
+	"pedi" : 0.205,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+Type "it" for more
+> db.test.find({"skin":{$type:1}}).pretty()
+> db.test.find({"class":{$regex:"p"}}).pretty()
+{
+	"_id" : ObjectId("6088e6beb332092a53699653"),
+	"preg" : 2,
+	"plas" : 197,
+	"pres" : 70,
+	"skin" : 45,
+	"insu" : 543,
+	"mass" : 30.5,
+	"pedi" : 0.158,
+	"age" : 53,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699654"),
+	"preg" : 8,
+	"plas" : 125,
+	"pres" : 96,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 0,
+	"pedi" : 0.232,
+	"age" : 54,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699656"),
+	"preg" : 10,
+	"plas" : 168,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 38,
+	"pedi" : 0.537,
+	"age" : 34,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699658"),
+	"preg" : 1,
+	"plas" : 189,
+	"pres" : 60,
+	"skin" : 23,
+	"insu" : 846,
+	"mass" : 30.1,
+	"pedi" : 0.398,
+	"age" : 59,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699659"),
+	"preg" : 5,
+	"plas" : 166,
+	"pres" : 72,
+	"skin" : 19,
+	"insu" : 175,
+	"mass" : 25.8,
+	"pedi" : 0.587,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965a"),
+	"preg" : 0,
+	"plas" : 137,
+	"pres" : 40,
+	"skin" : 35,
+	"insu" : 168,
+	"mass" : 43.1,
+	"pedi" : 2.288,
+	"age" : 33,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965b"),
+	"preg" : 0,
+	"plas" : 118,
+	"pres" : 84,
+	"skin" : 47,
+	"insu" : 230,
+	"mass" : 45.8,
+	"pedi" : 0.551,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965c"),
+	"preg" : 7,
+	"plas" : 107,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 29.6,
+	"pedi" : 0.254,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965e"),
+	"preg" : 1,
+	"plas" : 115,
+	"pres" : 70,
+	"skin" : 30,
+	"insu" : 96,
+	"mass" : 34.6,
+	"pedi" : 0.529,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699661"),
+	"preg" : 7,
+	"plas" : 196,
+	"pres" : 90,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39.8,
+	"pedi" : 0.451,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699662"),
+	"preg" : 9,
+	"plas" : 119,
+	"pres" : 80,
+	"skin" : 35,
+	"insu" : 0,
+	"mass" : 29,
+	"pedi" : 0.263,
+	"age" : 29,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699664"),
+	"preg" : 11,
+	"plas" : 143,
+	"pres" : 94,
+	"skin" : 33,
+	"insu" : 146,
+	"mass" : 36.6,
+	"pedi" : 0.254,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699665"),
+	"preg" : 10,
+	"plas" : 125,
+	"pres" : 70,
+	"skin" : 26,
+	"insu" : 115,
+	"mass" : 31.1,
+	"pedi" : 0.205,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699666"),
+	"preg" : 7,
+	"plas" : 147,
+	"pres" : 76,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39.4,
+	"pedi" : 0.257,
+	"age" : 43,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699668"),
+	"preg" : 6,
+	"plas" : 148,
+	"pres" : 72,
+	"skin" : 35,
+	"insu" : 0,
+	"mass" : 33.6,
+	"pedi" : 0.627,
+	"age" : 50,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369966a"),
+	"preg" : 8,
+	"plas" : 183,
+	"pres" : 64,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 23.3,
+	"pedi" : 0.672,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369966b"),
+	"preg" : 7,
+	"plas" : 100,
+	"pres" : 0,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 30,
+	"pedi" : 0.484,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369966c"),
+	"preg" : 3,
+	"plas" : 78,
+	"pres" : 50,
+	"skin" : 32,
+	"insu" : 88,
+	"mass" : 31,
+	"pedi" : 0.248,
+	"age" : 26,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699672"),
+	"preg" : 3,
+	"plas" : 158,
+	"pres" : 76,
+	"skin" : 36,
+	"insu" : 245,
+	"mass" : 31.6,
+	"pedi" : 0.851,
+	"age" : 28,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699677"),
+	"preg" : 9,
+	"plas" : 102,
+	"pres" : 76,
+	"skin" : 37,
+	"insu" : 0,
+	"mass" : 32.9,
+	"pedi" : 0.665,
+	"age" : 46,
+	"class" : "tested_positive"
+}
+Type "it" for more
+> db.test.update({"age":28},{$set:{"age":25}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.test.find().pretty()
+{
+	"_id" : ObjectId("6088e6beb332092a53699652"),
+	"preg" : 5,
+	"plas" : 116,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 25.6,
+	"pedi" : 0.201,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699653"),
+	"preg" : 2,
+	"plas" : 197,
+	"pres" : 70,
+	"skin" : 45,
+	"insu" : 543,
+	"mass" : 30.5,
+	"pedi" : 0.158,
+	"age" : 53,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699654"),
+	"preg" : 8,
+	"plas" : 125,
+	"pres" : 96,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 0,
+	"pedi" : 0.232,
+	"age" : 54,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699655"),
+	"preg" : 4,
+	"plas" : 110,
+	"pres" : 92,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 37.6,
+	"pedi" : 0.191,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699656"),
+	"preg" : 10,
+	"plas" : 168,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 38,
+	"pedi" : 0.537,
+	"age" : 34,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699657"),
+	"preg" : 10,
+	"plas" : 139,
+	"pres" : 80,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 27.1,
+	"pedi" : 1.441,
+	"age" : 57,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699658"),
+	"preg" : 1,
+	"plas" : 189,
+	"pres" : 60,
+	"skin" : 23,
+	"insu" : 846,
+	"mass" : 30.1,
+	"pedi" : 0.398,
+	"age" : 59,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699659"),
+	"preg" : 5,
+	"plas" : 166,
+	"pres" : 72,
+	"skin" : 19,
+	"insu" : 175,
+	"mass" : 25.8,
+	"pedi" : 0.587,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965a"),
+	"preg" : 0,
+	"plas" : 137,
+	"pres" : 40,
+	"skin" : 35,
+	"insu" : 168,
+	"mass" : 43.1,
+	"pedi" : 2.288,
+	"age" : 33,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965b"),
+	"preg" : 0,
+	"plas" : 118,
+	"pres" : 84,
+	"skin" : 47,
+	"insu" : 230,
+	"mass" : 45.8,
+	"pedi" : 0.551,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965c"),
+	"preg" : 7,
+	"plas" : 107,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 29.6,
+	"pedi" : 0.254,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965d"),
+	"preg" : 1,
+	"plas" : 103,
+	"pres" : 30,
+	"skin" : 38,
+	"insu" : 83,
+	"mass" : 43.3,
+	"pedi" : 0.183,
+	"age" : 33,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965e"),
+	"preg" : 1,
+	"plas" : 115,
+	"pres" : 70,
+	"skin" : 30,
+	"insu" : 96,
+	"mass" : 34.6,
+	"pedi" : 0.529,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965f"),
+	"preg" : 3,
+	"plas" : 126,
+	"pres" : 88,
+	"skin" : 41,
+	"insu" : 235,
+	"mass" : 39.3,
+	"pedi" : 0.704,
+	"age" : 27,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699660"),
+	"preg" : 8,
+	"plas" : 99,
+	"pres" : 84,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 35.4,
+	"pedi" : 0.388,
+	"age" : 50,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699661"),
+	"preg" : 7,
+	"plas" : 196,
+	"pres" : 90,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39.8,
+	"pedi" : 0.451,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699662"),
+	"preg" : 9,
+	"plas" : 119,
+	"pres" : 80,
+	"skin" : 35,
+	"insu" : 0,
+	"mass" : 29,
+	"pedi" : 0.263,
+	"age" : 29,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699663"),
+	"preg" : 1,
+	"plas" : 89,
+	"pres" : 66,
+	"skin" : 23,
+	"insu" : 94,
+	"mass" : 28.1,
+	"pedi" : 0.167,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699664"),
+	"preg" : 11,
+	"plas" : 143,
+	"pres" : 94,
+	"skin" : 33,
+	"insu" : 146,
+	"mass" : 36.6,
+	"pedi" : 0.254,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699665"),
+	"preg" : 10,
+	"plas" : 125,
+	"pres" : 70,
+	"skin" : 26,
+	"insu" : 115,
+	"mass" : 31.1,
+	"pedi" : 0.205,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+Type "it" for more
+> db.test.update({"age":27},{$set:{"age":22}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.test.find().pretty()
+{
+	"_id" : ObjectId("6088e6beb332092a53699652"),
+	"preg" : 5,
+	"plas" : 116,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 25.6,
+	"pedi" : 0.201,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699653"),
+	"preg" : 2,
+	"plas" : 197,
+	"pres" : 70,
+	"skin" : 45,
+	"insu" : 543,
+	"mass" : 30.5,
+	"pedi" : 0.158,
+	"age" : 53,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699654"),
+	"preg" : 8,
+	"plas" : 125,
+	"pres" : 96,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 0,
+	"pedi" : 0.232,
+	"age" : 54,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699655"),
+	"preg" : 4,
+	"plas" : 110,
+	"pres" : 92,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 37.6,
+	"pedi" : 0.191,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699656"),
+	"preg" : 10,
+	"plas" : 168,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 38,
+	"pedi" : 0.537,
+	"age" : 34,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699657"),
+	"preg" : 10,
+	"plas" : 139,
+	"pres" : 80,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 27.1,
+	"pedi" : 1.441,
+	"age" : 57,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699658"),
+	"preg" : 1,
+	"plas" : 189,
+	"pres" : 60,
+	"skin" : 23,
+	"insu" : 846,
+	"mass" : 30.1,
+	"pedi" : 0.398,
+	"age" : 59,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699659"),
+	"preg" : 5,
+	"plas" : 166,
+	"pres" : 72,
+	"skin" : 19,
+	"insu" : 175,
+	"mass" : 25.8,
+	"pedi" : 0.587,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965a"),
+	"preg" : 0,
+	"plas" : 137,
+	"pres" : 40,
+	"skin" : 35,
+	"insu" : 168,
+	"mass" : 43.1,
+	"pedi" : 2.288,
+	"age" : 33,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965b"),
+	"preg" : 0,
+	"plas" : 118,
+	"pres" : 84,
+	"skin" : 47,
+	"insu" : 230,
+	"mass" : 45.8,
+	"pedi" : 0.551,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965c"),
+	"preg" : 7,
+	"plas" : 107,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 29.6,
+	"pedi" : 0.254,
+	"age" : 31,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965d"),
+	"preg" : 1,
+	"plas" : 103,
+	"pres" : 30,
+	"skin" : 38,
+	"insu" : 83,
+	"mass" : 43.3,
+	"pedi" : 0.183,
+	"age" : 33,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965e"),
+	"preg" : 1,
+	"plas" : 115,
+	"pres" : 70,
+	"skin" : 30,
+	"insu" : 96,
+	"mass" : 34.6,
+	"pedi" : 0.529,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965f"),
+	"preg" : 3,
+	"plas" : 126,
+	"pres" : 88,
+	"skin" : 41,
+	"insu" : 235,
+	"mass" : 39.3,
+	"pedi" : 0.704,
+	"age" : 22,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699660"),
+	"preg" : 8,
+	"plas" : 99,
+	"pres" : 84,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 35.4,
+	"pedi" : 0.388,
+	"age" : 50,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699661"),
+	"preg" : 7,
+	"plas" : 196,
+	"pres" : 90,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39.8,
+	"pedi" : 0.451,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699662"),
+	"preg" : 9,
+	"plas" : 119,
+	"pres" : 80,
+	"skin" : 35,
+	"insu" : 0,
+	"mass" : 29,
+	"pedi" : 0.263,
+	"age" : 29,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699663"),
+	"preg" : 1,
+	"plas" : 89,
+	"pres" : 66,
+	"skin" : 23,
+	"insu" : 94,
+	"mass" : 28.1,
+	"pedi" : 0.167,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699664"),
+	"preg" : 11,
+	"plas" : 143,
+	"pres" : 94,
+	"skin" : 33,
+	"insu" : 146,
+	"mass" : 36.6,
+	"pedi" : 0.254,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699665"),
+	"preg" : 10,
+	"plas" : 125,
+	"pres" : 70,
+	"skin" : 26,
+	"insu" : 115,
+	"mass" : 31.1,
+	"pedi" : 0.205,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+Type "it" for more
+> db.test.remove({"age":31})
+WriteResult({ "nRemoved" : 24 })
+> db.test.find().pretty()
+{
+	"_id" : ObjectId("6088e6beb332092a53699652"),
+	"preg" : 5,
+	"plas" : 116,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 25.6,
+	"pedi" : 0.201,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699653"),
+	"preg" : 2,
+	"plas" : 197,
+	"pres" : 70,
+	"skin" : 45,
+	"insu" : 543,
+	"mass" : 30.5,
+	"pedi" : 0.158,
+	"age" : 53,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699654"),
+	"preg" : 8,
+	"plas" : 125,
+	"pres" : 96,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 0,
+	"pedi" : 0.232,
+	"age" : 54,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699655"),
+	"preg" : 4,
+	"plas" : 110,
+	"pres" : 92,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 37.6,
+	"pedi" : 0.191,
+	"age" : 30,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699656"),
+	"preg" : 10,
+	"plas" : 168,
+	"pres" : 74,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 38,
+	"pedi" : 0.537,
+	"age" : 34,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699657"),
+	"preg" : 10,
+	"plas" : 139,
+	"pres" : 80,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 27.1,
+	"pedi" : 1.441,
+	"age" : 57,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699658"),
+	"preg" : 1,
+	"plas" : 189,
+	"pres" : 60,
+	"skin" : 23,
+	"insu" : 846,
+	"mass" : 30.1,
+	"pedi" : 0.398,
+	"age" : 59,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699659"),
+	"preg" : 5,
+	"plas" : 166,
+	"pres" : 72,
+	"skin" : 19,
+	"insu" : 175,
+	"mass" : 25.8,
+	"pedi" : 0.587,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965a"),
+	"preg" : 0,
+	"plas" : 137,
+	"pres" : 40,
+	"skin" : 35,
+	"insu" : 168,
+	"mass" : 43.1,
+	"pedi" : 2.288,
+	"age" : 33,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965d"),
+	"preg" : 1,
+	"plas" : 103,
+	"pres" : 30,
+	"skin" : 38,
+	"insu" : 83,
+	"mass" : 43.3,
+	"pedi" : 0.183,
+	"age" : 33,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965e"),
+	"preg" : 1,
+	"plas" : 115,
+	"pres" : 70,
+	"skin" : 30,
+	"insu" : 96,
+	"mass" : 34.6,
+	"pedi" : 0.529,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965f"),
+	"preg" : 3,
+	"plas" : 126,
+	"pres" : 88,
+	"skin" : 41,
+	"insu" : 235,
+	"mass" : 39.3,
+	"pedi" : 0.704,
+	"age" : 22,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699660"),
+	"preg" : 8,
+	"plas" : 99,
+	"pres" : 84,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 35.4,
+	"pedi" : 0.388,
+	"age" : 50,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699661"),
+	"preg" : 7,
+	"plas" : 196,
+	"pres" : 90,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39.8,
+	"pedi" : 0.451,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699662"),
+	"preg" : 9,
+	"plas" : 119,
+	"pres" : 80,
+	"skin" : 35,
+	"insu" : 0,
+	"mass" : 29,
+	"pedi" : 0.263,
+	"age" : 29,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699663"),
+	"preg" : 1,
+	"plas" : 89,
+	"pres" : 66,
+	"skin" : 23,
+	"insu" : 94,
+	"mass" : 28.1,
+	"pedi" : 0.167,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699664"),
+	"preg" : 11,
+	"plas" : 143,
+	"pres" : 94,
+	"skin" : 33,
+	"insu" : 146,
+	"mass" : 36.6,
+	"pedi" : 0.254,
+	"age" : 51,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699665"),
+	"preg" : 10,
+	"plas" : 125,
+	"pres" : 70,
+	"skin" : 26,
+	"insu" : 115,
+	"mass" : 31.1,
+	"pedi" : 0.205,
+	"age" : 41,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699666"),
+	"preg" : 7,
+	"plas" : 147,
+	"pres" : 76,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39.4,
+	"pedi" : 0.257,
+	"age" : 43,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699667"),
+	"preg" : 1,
+	"plas" : 97,
+	"pres" : 66,
+	"skin" : 15,
+	"insu" : 140,
+	"mass" : 23.2,
+	"pedi" : 0.487,
+	"age" : 22,
+	"class" : "tested_negative"
+}
+Type "it" for more
+>  db.test.aggregate([{$group:{_id:"$age"}}])
+{ "_id" : 63 }
+{ "_id" : 68 }
+{ "_id" : 66 }
+{ "_id" : 47 }
+{ "_id" : 52 }
+{ "_id" : 55 }
+{ "_id" : 69 }
+{ "_id" : 36 }
+{ "_id" : 23 }
+{ "_id" : 67 }
+{ "_id" : 24 }
+{ "_id" : 41 }
+{ "_id" : 50 }
+{ "_id" : 64 }
+{ "_id" : 33 }
+{ "_id" : 28 }
+{ "_id" : 49 }
+{ "_id" : 42 }
+{ "_id" : 59 }
+{ "_id" : 30 }
+Type "it" for more
+> db.test.mapReduce(function(){emit(this.age,this.preg);},function(key,values){return Array.sum(values)},{query:{class:"tested_positive"},out:"diabetes"})
+{
+	"result" : "diabetes",
+	"timeMillis" : 114,
+	"counts" : {
+		"input" : 255,
+		"emit" : 255,
+		"reduce" : 38,
+		"output" : 44
+	},
+	"ok" : 1
+}
+> show collections
+diabetes
+test
+> db.diabetes.find().pretty()
+{ "_id" : 21, "value" : 3 }
+{ "_id" : 22, "value" : 24 }
+{ "_id" : 23, "value" : 13 }
+{ "_id" : 24, "value" : 9 }
+{ "_id" : 25, "value" : 29 }
+{ "_id" : 26, "value" : 12 }
+{ "_id" : 27, "value" : 23 }
+{ "_id" : 28, "value" : 17 }
+{ "_id" : 29, "value" : 51 }
+{ "_id" : 30, "value" : 20 }
+{ "_id" : 32, "value" : 44 }
+{ "_id" : 33, "value" : 39 }
+{ "_id" : 34, "value" : 27 }
+{ "_id" : 35, "value" : 17 }
+{ "_id" : 36, "value" : 55 }
+{ "_id" : 37, "value" : 28 }
+{ "_id" : 38, "value" : 74 }
+{ "_id" : 39, "value" : 23 }
+{ "_id" : 40, "value" : 44 }
+{ "_id" : 41, "value" : 76 }
+Type "it" for more
+> db.test.aggregate({$match:{preg:{$gte:20}}})
+> db.test.aggregate({$match:{preg:1}})
+{ "_id" : ObjectId("6088e6beb332092a53699658"), "preg" : 1, "plas" : 189, "pres" : 60, "skin" : 23, "insu" : 846, "mass" : 30.1, "pedi" : 0.398, "age" : 59, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a5369965d"), "preg" : 1, "plas" : 103, "pres" : 30, "skin" : 38, "insu" : 83, "mass" : 43.3, "pedi" : 0.183, "age" : 33, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a5369965e"), "preg" : 1, "plas" : 115, "pres" : 70, "skin" : 30, "insu" : 96, "mass" : 34.6, "pedi" : 0.529, "age" : 32, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a53699663"), "preg" : 1, "plas" : 89, "pres" : 66, "skin" : 23, "insu" : 94, "mass" : 28.1, "pedi" : 0.167, "age" : 21, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699667"), "preg" : 1, "plas" : 97, "pres" : 66, "skin" : 15, "insu" : 140, "mass" : 23.2, "pedi" : 0.487, "age" : 22, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a5369967d"), "preg" : 1, "plas" : 103, "pres" : 80, "skin" : 11, "insu" : 82, "mass" : 19.4, "pedi" : 0.491, "age" : 22, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a5369967f"), "preg" : 1, "plas" : 101, "pres" : 50, "skin" : 15, "insu" : 36, "mass" : 24.2, "pedi" : 0.526, "age" : 26, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699683"), "preg" : 1, "plas" : 73, "pres" : 50, "skin" : 10, "insu" : 0, "mass" : 23, "pedi" : 0.248, "age" : 21, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699687"), "preg" : 1, "plas" : 146, "pres" : 56, "skin" : 0, "insu" : 0, "mass" : 29.7, "pedi" : 0.564, "age" : 29, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a5369968f"), "preg" : 1, "plas" : 95, "pres" : 66, "skin" : 13, "insu" : 38, "mass" : 19.6, "pedi" : 0.334, "age" : 25, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699695"), "preg" : 1, "plas" : 79, "pres" : 75, "skin" : 30, "insu" : 0, "mass" : 32, "pedi" : 0.396, "age" : 22, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a53699696"), "preg" : 1, "plas" : 0, "pres" : 48, "skin" : 20, "insu" : 0, "mass" : 24.7, "pedi" : 0.14, "age" : 22, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a536996ab"), "preg" : 1, "plas" : 107, "pres" : 68, "skin" : 19, "insu" : 0, "mass" : 26.5, "pedi" : 0.165, "age" : 24, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a536996ac"), "preg" : 1, "plas" : 80, "pres" : 55, "skin" : 0, "insu" : 0, "mass" : 19.1, "pedi" : 0.258, "age" : 21, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a536996af"), "preg" : 1, "plas" : 163, "pres" : 72, "skin" : 0, "insu" : 0, "mass" : 39, "pedi" : 1.222, "age" : 33, "class" : "tested_positive" }
+{ "_id" : ObjectId("6088e6beb332092a536996b0"), "preg" : 1, "plas" : 151, "pres" : 60, "skin" : 0, "insu" : 0, "mass" : 26.1, "pedi" : 0.179, "age" : 22, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a536996b2"), "preg" : 1, "plas" : 81, "pres" : 72, "skin" : 18, "insu" : 40, "mass" : 26.6, "pedi" : 0.283, "age" : 24, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a536996b4"), "preg" : 1, "plas" : 126, "pres" : 56, "skin" : 29, "insu" : 152, "mass" : 28.7, "pedi" : 0.801, "age" : 21, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a536996b5"), "preg" : 1, "plas" : 96, "pres" : 122, "skin" : 0, "insu" : 0, "mass" : 22.4, "pedi" : 0.207, "age" : 27, "class" : "tested_negative" }
+{ "_id" : ObjectId("6088e6beb332092a536996bb"), "preg" : 1, "plas" : 89, "pres" : 76, "skin" : 34, "insu" : 37, "mass" : 31.2, "pedi" : 0.192, "age" : 23, "class" : "tested_negative" }
+Type "it" for more
+> db.test.aggregate({$match:{preg:1}}).pretty()
+{
+	"_id" : ObjectId("6088e6beb332092a53699658"),
+	"preg" : 1,
+	"plas" : 189,
+	"pres" : 60,
+	"skin" : 23,
+	"insu" : 846,
+	"mass" : 30.1,
+	"pedi" : 0.398,
+	"age" : 59,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965d"),
+	"preg" : 1,
+	"plas" : 103,
+	"pres" : 30,
+	"skin" : 38,
+	"insu" : 83,
+	"mass" : 43.3,
+	"pedi" : 0.183,
+	"age" : 33,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369965e"),
+	"preg" : 1,
+	"plas" : 115,
+	"pres" : 70,
+	"skin" : 30,
+	"insu" : 96,
+	"mass" : 34.6,
+	"pedi" : 0.529,
+	"age" : 32,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699663"),
+	"preg" : 1,
+	"plas" : 89,
+	"pres" : 66,
+	"skin" : 23,
+	"insu" : 94,
+	"mass" : 28.1,
+	"pedi" : 0.167,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699667"),
+	"preg" : 1,
+	"plas" : 97,
+	"pres" : 66,
+	"skin" : 15,
+	"insu" : 140,
+	"mass" : 23.2,
+	"pedi" : 0.487,
+	"age" : 22,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369967d"),
+	"preg" : 1,
+	"plas" : 103,
+	"pres" : 80,
+	"skin" : 11,
+	"insu" : 82,
+	"mass" : 19.4,
+	"pedi" : 0.491,
+	"age" : 22,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369967f"),
+	"preg" : 1,
+	"plas" : 101,
+	"pres" : 50,
+	"skin" : 15,
+	"insu" : 36,
+	"mass" : 24.2,
+	"pedi" : 0.526,
+	"age" : 26,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699683"),
+	"preg" : 1,
+	"plas" : 73,
+	"pres" : 50,
+	"skin" : 10,
+	"insu" : 0,
+	"mass" : 23,
+	"pedi" : 0.248,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699687"),
+	"preg" : 1,
+	"plas" : 146,
+	"pres" : 56,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 29.7,
+	"pedi" : 0.564,
+	"age" : 29,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a5369968f"),
+	"preg" : 1,
+	"plas" : 95,
+	"pres" : 66,
+	"skin" : 13,
+	"insu" : 38,
+	"mass" : 19.6,
+	"pedi" : 0.334,
+	"age" : 25,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699695"),
+	"preg" : 1,
+	"plas" : 79,
+	"pres" : 75,
+	"skin" : 30,
+	"insu" : 0,
+	"mass" : 32,
+	"pedi" : 0.396,
+	"age" : 22,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a53699696"),
+	"preg" : 1,
+	"plas" : 0,
+	"pres" : 48,
+	"skin" : 20,
+	"insu" : 0,
+	"mass" : 24.7,
+	"pedi" : 0.14,
+	"age" : 22,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a536996ab"),
+	"preg" : 1,
+	"plas" : 107,
+	"pres" : 68,
+	"skin" : 19,
+	"insu" : 0,
+	"mass" : 26.5,
+	"pedi" : 0.165,
+	"age" : 24,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a536996ac"),
+	"preg" : 1,
+	"plas" : 80,
+	"pres" : 55,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 19.1,
+	"pedi" : 0.258,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a536996af"),
+	"preg" : 1,
+	"plas" : 163,
+	"pres" : 72,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 39,
+	"pedi" : 1.222,
+	"age" : 33,
+	"class" : "tested_positive"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a536996b0"),
+	"preg" : 1,
+	"plas" : 151,
+	"pres" : 60,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 26.1,
+	"pedi" : 0.179,
+	"age" : 22,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a536996b2"),
+	"preg" : 1,
+	"plas" : 81,
+	"pres" : 72,
+	"skin" : 18,
+	"insu" : 40,
+	"mass" : 26.6,
+	"pedi" : 0.283,
+	"age" : 24,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a536996b4"),
+	"preg" : 1,
+	"plas" : 126,
+	"pres" : 56,
+	"skin" : 29,
+	"insu" : 152,
+	"mass" : 28.7,
+	"pedi" : 0.801,
+	"age" : 21,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a536996b5"),
+	"preg" : 1,
+	"plas" : 96,
+	"pres" : 122,
+	"skin" : 0,
+	"insu" : 0,
+	"mass" : 22.4,
+	"pedi" : 0.207,
+	"age" : 27,
+	"class" : "tested_negative"
+}
+{
+	"_id" : ObjectId("6088e6beb332092a536996bb"),
+	"preg" : 1,
+	"plas" : 89,
+	"pres" : 76,
+	"skin" : 34,
+	"insu" : 37,
+	"mass" : 31.2,
+	"pedi" : 0.192,
+	"age" : 23,
+	"class" : "tested_negative"
+}
+Type "it" for more
+> 
+
